@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PeopleCard from "./PeopleCard";
+import styled from "styled-components";
+
+
+const CardGrid = styled.section`
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+`;
+
 
 function PeoplePage() {
     const [char, setChar] = useState([]);
@@ -19,7 +29,7 @@ function PeoplePage() {
 
     return (
 
-        <section>
+        <CardGrid>
             {char.map(item => {
                 return (
                     <PeopleCard
@@ -35,7 +45,7 @@ function PeoplePage() {
                     />
                 );
             })}
-        </section>
+        </CardGrid>
 
     );
 

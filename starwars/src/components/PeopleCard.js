@@ -1,20 +1,47 @@
 import React from "react";
+import styled from "styled-components";
+import {
+	Card,
+	CardHeader,
+	CardBody,
+	CardTitle,
+	CardText,
+	Row,
+	Col
+} from "reactstrap";
+
+const CardLayout = styled.div`
+	width: 25%;
+	margin: 3%;
+`;
 
 function PeopleCard(props) {
 	return (
-		<div>
-			<h2>{props.name}</h2>
-			<h3>Stats</h3>
-			<div>
-				<p>{props.gender}</p>
-				<p>{props.year}</p>
-				<p>{props.height}</p>
-				<p>{props.mass}</p>
-				<p>{props.hair}</p>
-				<p>{props.skin}</p>
-				<p>{props.eye}</p>
-			</div>
-		</div>
+		<CardLayout>
+			<Card
+				body
+				inverse
+				style={{ backgroundColor: "#333", borderColor: "#fac927" }}
+			>
+				<CardHeader body inverse style={{ borderColor: "#fac927" }}>
+					<h2>{props.name}</h2>
+				</CardHeader>
+				<CardTitle>
+					<h3 className="text-info">-STATS-</h3>
+				</CardTitle>
+				<CardBody>
+					<CardText>
+						<p>Gender: {props.gender}</p>
+						<p>Birth Year: {props.year}</p>
+						<p>Height: {props.height}cm</p>
+						<p>Weight: {props.mass}kg</p>
+						<p>Hair Color: {props.hair}</p>
+						<p>Skin Color: {props.skin}</p>
+						<p>Eye Color: {props.eye}</p>
+					</CardText>
+				</CardBody>
+			</Card>
+		</CardLayout>
 	);
 }
 
