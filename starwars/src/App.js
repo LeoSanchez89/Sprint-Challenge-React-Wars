@@ -1,32 +1,15 @@
-import React, { useState, useEffect } from "react";
-import './App.css';
+import React from "react";
+import "./App.css";
+import PeoplePage from "./components/PeoplePage";
 
 const App = () => {
-  
-  const [char, setChar] = useState([]);
 
-	useEffect(() => {
-		axios
-			.get(
-				""
-			)
-			.then(response => {
-				console.log(response.data);
-				setChar(response.data);
-			})
-			.catch(error => {
-				console.log("data was not returned", error);
-			});
-	}, []);
-
-
-
-
-  return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-    </div>
-  );
-}
+	return (
+		<div className="App">
+			<h1 className="Header">React Wars</h1>
+			<PeoplePage/>
+		</div>
+	);
+};
 
 export default App;
